@@ -1,18 +1,20 @@
 """Тесты парсера эмулятора."""
+
 import unittest
+
 from src.main import parser
 
+
 class ParserTest(unittest.TestCase):
-    """Проверка разбора строки ввод"""
+    """Проверка разбора строки ввода."""
 
     def test_split(self):
-        """Команда и аргументы разделяются по пробеламю"""
+        """Команда и аргументы разделяются по пробелам."""
         self.assertEqual(parser("ls -l /home"), ["ls", "-l", "/home"])
 
     def test_empty(self):
-        """Пустая строка дает пустой список"""
+        """Пустая строка даёт пустой список."""
         self.assertEqual(parser("    "), [])
-
 
 
 if __name__ == "__main__":
